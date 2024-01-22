@@ -18,6 +18,9 @@ const todoSchema = new mongoose.Schema(
         description: {
             type: String
         },
+        theme: {
+            type: String
+        }
     },
     {
         timeStamp: true
