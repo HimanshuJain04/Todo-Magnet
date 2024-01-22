@@ -19,23 +19,30 @@ function Navbar() {
 
   return (
     <div
-      className={`flex w-full justify-center border-b-2 border-${theme}-border items-center bg-${theme}-primary `}
+      className={
+        `flex w-full justify-center border-b-2 border-${theme}-border items-center  bg-${theme}-primary ` +
+        ``
+      }
     >
       <div className="w-11/12 flex justify-between items-center py-3 gap-10">
         {/* left for search-bar and name and hamburger */}
         <div className="flex gap-20">
-          <div className="flex justify-center gap-5 items-center">
+          <div
+            className={`flex justify-center gap-5 items-center text-{theme}-text`}
+          >
             {/* hamburger */}
             <div
-              className={`text-2xl cursor-pointer rounded-full  p-3 hover:bg-${theme}-secondary transition-all ease-in-out duration-300 text-white`}
+              className={`text-2xl cursor-pointer rounded-full  p-3 hover:bg-${theme}-secondary transition-all ease-in-out duration-300 text-${theme}-text`}
             >
               <IoMdMenu />
             </div>
 
             {/* name of app */}
             <div>
-              <p className={`text-xl font-semibold text-${theme}-text `}>
-                Todo-Magnet
+              <p
+                className={`text-xl transition-all duration-300 ease-in-out font-semibold text-${theme}-text `}
+              >
+                Todo Magnet
               </p>
             </div>
           </div>
@@ -44,7 +51,7 @@ function Navbar() {
           <div
             className={`flex justify-center items-center gap-1 rounded-md bg-[#383636] px-5 py-1 bg-${theme}-secondary`}
           >
-            <div className={` cursor-pointer text-${theme}-text`}>
+            <div className={` cursor-pointer font-bold text-${theme}-text`}>
               <SlMagnifier />
             </div>
             <input
@@ -62,27 +69,35 @@ function Navbar() {
         {/* right for account and settings */}
         <div className="flex justify-center items-center gap-10">
           {/* settings */}
-          <div className="flex justify-center items-center gap-5">
+          <div className="flex justify-center items-center gap-2 text-2xl transition-all duration-300 ease-in-out">
             {/* refresh */}
-            <div>
+            <div
+              className={` hover:bg-${theme}-secondary rounded-full transition-all duration-300 ease-in-out p-2 cursor-pointer `}
+            >
               <IoIosRefresh />
             </div>
 
             {/* view setting */}
-            <div>
+            <div
+              className={` hover:bg-${theme}-secondary rounded-full transition-all duration-300 ease-in-out p-2 cursor-pointer `}
+            >
               <BsViewStacked />
             </div>
 
             {/* setting */}
-            <div>
+            <div
+              className={` hover:bg-${theme}-secondary rounded-full transition-all duration-300 ease-in-out p-2 cursor-pointer `}
+            >
               <IoSettings />
             </div>
           </div>
 
           {/* account and dots */}
-          <div>
+          <div className="flex justify-center items-center gap-2 transition-all duration-300 ease-in-out">
             {/* dots */}
-            <div>
+            <div
+              className={`text-2xl cursor-pointer hover:bg-${theme}-secondary p-3 rounded-full`}
+            >
               <TbGridDots />
             </div>
 

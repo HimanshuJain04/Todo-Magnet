@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { App } from "@/context/AppContext";
 import Navbar from "../components/common/Navbar";
+import Sidebar from "@/components/common/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +21,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <App>
-          <Navbar />
-          <div>{children}</div>
+          <div className="fixed top-0 w-full">
+            <Navbar />
+          </div>
+          <div className="flex w-full justify-end items-start">
+            <div className="fixed left-0 mt-24">
+              <Sidebar />
+            </div>
+            <div className="w-[calc(100vw-280px)]">{children}</div>
+          </div>
         </App>
       </body>
     </html>
