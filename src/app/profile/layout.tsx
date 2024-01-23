@@ -6,14 +6,15 @@ import Sidebar from "@/components/common/Sidebar";
 const Layout = ({ children }) => {
   return (
     <div>
-      <header>Navbar</header>
+      <header>
+        <div className="fixed top-0 w-full">
+          <Navbar />
+        </div>
+      </header>
 
       {/* Main content */}
       <main>
         <div className={`w-full h-full `}>
-          <div className="fixed top-0 w-full">
-            <Navbar />
-          </div>
           <div className="flex w-full justify-end items-start">
             <div className="fixed left-0 mt-20">
               <Sidebar />
